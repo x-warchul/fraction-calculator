@@ -11,7 +11,6 @@ The Fraction Calculator was developed as an object-oriented Java project to demo
 - Object-Oriented Programming (OOP)
 - Custom exception handling
 - Java Swing GUI development
-- Collections using `ArrayList`
 - Comparable interface implementation
 - Fraction arithmetic and comparison operations
 
