@@ -1,94 +1,183 @@
-# Card Game - Game of 21
+# Fraction Calculator
 
-A Java console application that simulates a simplified version of Blackjack (21) against a computer-controlled opponent.
+A Java Swing desktop application that allows users to create, manage, and perform operations on fractions through a graphical user interface.
 
 ---
 
 ## Overview
 
-This project was developed as an object-oriented programming exercise and demonstrates the use of abstraction, inheritance, encapsulation, and composition in Java.
+The Fraction Calculator was developed as an object-oriented Java project to demonstrate:
 
-Players compete against a computer opponent by drawing cards from a standard 52-card deck. The objective is to achieve a score as close to 21 as possible without exceeding it. Face cards are worth 10 points, and Aces are automatically valued as either 1 or 11 depending on which value benefits the hand.
+- Object-Oriented Programming (OOP)
+- Custom exception handling
+- Java Swing GUI development
+- Collections using `ArrayList`
+- Comparable interface implementation
+- Fraction arithmetic and comparison operations
 
-The game supports multiple rounds and maintains a running leaderboard throughout the session.
+Users can create fractions, perform mathematical operations, sort fractions, and view results within an interactive desktop application.
 
 ---
 
 ## Features
 
-- Standard 52-card deck generation
-- Fisher-Yates deck shuffling algorithm
-- Player versus computer gameplay
-- Blackjack-style scoring system
-- Automatic Ace value calculation (1 or 11)
-- Computer decision-making logic
-- Multi-round gameplay
-- Session leaderboard tracking
-- Object-oriented design using inheritance and abstraction
+### Fraction Creation
+
+- Create fractions using numerator and denominator input fields
+- Validate user input before creating fractions
+- Store multiple fractions during a session
+
+### Fraction Operations
+
+#### Unary Operations
+
+- Convert a fraction to its decimal equivalent
+- Generate the reciprocal of a fraction
+- Reduce a fraction to lowest terms
+
+#### Binary Operations
+
+- Add two fractions
+- Multiply two fractions
+- Compare fractions for equality
+- Determine whether one fraction is greater than another
+
+#### Additional Features
+
+- Sort all created fractions in ascending order
+- Clear all stored fractions and restart the session
+- Display operation history
+- Access operations through both a combo box and menu bar shortcuts
+
+---
+
+## Exception Handling
+
+The application includes custom exception classes to improve input validation and error handling.
+
+### DivisionByZeroException
+
+Thrown when a fraction is created with a denominator of zero.
+
+### EmptyOperandException
+
+Thrown when either the numerator or denominator field is left blank.
+
+### LongOperandException
+
+Thrown when an entered operand exceeds the allowed length.
+
+### Additional Validation
+
+The program also handles:
+
+- Non-numeric input
+- Invalid fraction creation attempts
+- Operations requiring more fractions than currently available
+
+---
+
+## Project Structure
+
+```text
+FractionCalculator.java
+    Main GUI application
+
+Fraction.java
+    Fraction object implementation
+    Arithmetic and comparison operations
+
+DivisionByZeroException.java
+    Custom exception for denominator validation
+
+EmptyOperandException.java
+    Custom exception for empty inputs
+
+LongOperandException.java
+    Custom exception for oversized inputs
+```
 
 ---
 
 ## Technologies Used
 
 - Java
-- Eclipse IDE
-- Java Collections Framework (`ArrayList`)
+- Java Swing
+- AWT Event Handling
+- Java Collections Framework 
+- Object-Oriented Programming
+- Custom Exceptions
 
 ---
 
-## Class Structure
+## Building the Project
 
-### Card
-Represents a single playing card, including suit, rank, and card value calculations.
+### Using Eclipse
 
-### Player
-Stores player information and manages each player's hand.
+1. Create a new Java Project.
+2. Add all `.java` files to the project's source folder.
+3. Build the project.
+4. Run `FractionCalculator.java`.
 
-### CardGame
-Abstract superclass that provides common card game functionality, including deck creation, shuffling, and card dealing.
+### Using the Command Line
 
-### GameOf21
-Implements the rules and gameplay logic for Blackjack / 21.
-
-### LeaderBoard
-Tracks wins, losses, draws, and games played during a session.
-
-### CardGameTester
-Application entry point containing the `main()` method.
-
----
-
-## How to Run
-
-### Option 1: Using Eclipse
-
-1. Clone the repository.
-2. Open Eclipse.
-3. Import the project:
-   - File -> Import -> Existing Projects into Workspace
-4. Select the project folder.
-5. Run `CardGameTester.java`.
-
-### Option 2: Using the Runnable JAR
-
-Run the included JAR file:
+Compile the project:
 
 ```bash
-java -jar CardGame.jar
+javac *.java
+```
+
+Run the application:
+
+```bash
+java FractionCalculator
 ```
 
 ---
 
-## Gameplay
+## Usage
 
-1. Enter your name when prompted.
-2. Both the player and computer receive two cards.
-3. Choose whether to draw additional cards.
-4. Try to reach 21 without going over.
-5. The computer follows basic Blackjack drawing rules.
-6. Results are recorded on the leaderboard.
-7. Continue playing additional rounds or exit the game.
+1. Enter a numerator.
+2. Enter a denominator.
+3. Click **Build Fraction**.
+4. Create additional fractions as needed.
+5. Select an operation from the drop-down menu.
+6. View results in the operation display area.
+7. Use the menu bar shortcuts for quick access to operations and program controls.
 
+---
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|-----------|---------|
+| Ctrl + N | Start Over |
+| Ctrl + Q | Exit |
+| Ctrl + D | Decimal |
+| Ctrl + R | Reciprocal |
+| Ctrl + L | Lowest Terms |
+| Ctrl + A | Add |
+| Ctrl + M | Multiply |
+| Ctrl + E | Equals |
+| Ctrl + G | Greater Than |
+| Ctrl + S | Sort |
+| F1 | About |
+
+---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+- Class design and encapsulation
+- Constructor overloading
+- Custom exception creation
+- GUI programming with Swing
+- Event-driven programming
+- Collections and sorting
+- Interface implementation using `Comparable`
+- Fraction arithmetic algorithms
+- User input validation and error handling
 
 ---
 
